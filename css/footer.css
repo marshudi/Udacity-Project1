@@ -1,0 +1,31 @@
+.footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 0;
+    color: #fff;
+}
+
+.footer-social-icons {
+    margin-left: 10px;
+}
+
+.footer-social-icons a {
+    display: inline-block;
+    margin-left: 5px;
+    color: #fff;
+    transition: transform 0.3s;
+}
+
+.footer-social-icons a:hover {
+    transform: translateY(-3px);
+}

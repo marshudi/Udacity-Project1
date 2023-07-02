@@ -1,91 +1,52 @@
-/* nav*/
-.navigation {
-  background-color: #333;
-  padding: 10px;
+/* Importing other CSS files */
+@import 'nav.css';
+@import 'main.css';
+@import 'footer.css';
+
+/* Global Styles */
+
+q {
+  color: brown;
 }
 
-.navigation ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
+figcaption {
+  color: #b7b7b7;
 }
 
-.navigation li {
-  margin: 0 10px;
-}
-
-.navigation li a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.navigation li a:hover {
-  color: #0091ff;
-}
-
-.navigation li.active a {
-  color: #0091ff;
-}
-
-
-/* content */
-
-
-    /* Responsive Styles */
-    @media (max-width: 767px) {
-      .card-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-      }
-
-      .card {
-          width: 90%;
-          max-width: 400px;
-      }
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  @media (min-width: 768px) {
-      .card-container {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
-      }
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+}
 
-      .card {
-          width: 100%;
-      }
+@media (min-width: 768px) {
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 
+  .card {
+    width: 100%;
+  }
+}
 
-        .card-content button {
-            background-color: rgb(0, 29, 67);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .card-content button:hover {
-            background-color: #29019e;
-        }
-
-
+/* Card Styles */
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 .card {
-  width: calc(33.33% - 20px);
-  margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   overflow: hidden;
@@ -117,36 +78,57 @@
   font-size: 16px;
   color: #666;
 }
-  
-  /* Footer */
-  .footer {
-    background-color: #333;
-    padding: 20px;
-    text-align: center;
+
+
+.card-content button {
+  background-color: rgb(72, 151, 255);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.footer-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.card-content button:hover {
+  background-color: #cab9fd;
 }
 
-.footer-content p {
-    margin: 0;
-    color: #fff;
+
+
+/* Grid Layout */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "container"
+    "footer";
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
-.footer-social-icons {
-    margin-left: 10px;
+header {
+  grid-area: header;
+  background-color: #f2f2f2;
+  padding: 20px;
 }
 
-.footer-social-icons a {
-    display: inline-block;
-    margin-left: 5px;
-    color: #fff;
-    transition: transform 0.3s;
+.container {
+  grid-area: container;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 200px 1fr;
+  grid-template-areas:
+    "nav main";
 }
 
-.footer-social-icons a:hover {
-    transform: translateY(-3px);
+footer {
+  grid-area: footer;
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
 }
